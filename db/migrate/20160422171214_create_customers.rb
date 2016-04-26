@@ -5,7 +5,6 @@ class CreateCustomers < ActiveRecord::Migration
       t.string :lastname
       t.string :phone
       t.string :timein
-      t.string :service
 
       t.timestamps null: false
     end
