@@ -51,12 +51,19 @@ text-shadow: 0 1px 1px #fff;
         <td width="20%" class="names"><%= customer.timein %></td>
         <td width="20%" class="names"><%= link_to 'sign out', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-
+    <% end %>
 
     </table>
 <hr/>
 </div>
 </div>
+
+<%else%>
+
+
+
+
+<%end%>
 
 </div>
 
