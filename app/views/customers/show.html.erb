@@ -1,0 +1,28 @@
+
+<style>
+   h1 { color: #d54d7b; font-family: "Great Vibes", 
+cursive; font-size: 150px; line-height: 160px; font-weight: normal;
+margin-bottom: 0px; margin-top: 40px; text-align: center;
+text-shadow: 0 1px 1px #fff; }
+   
+   h2 { color: #d54d7b; font-family: "Great Vibes", 
+cursive; font-size: 50px; line-height: 160px; font-weight: normal;
+margin-bottom: 0px; margin-top: 20px; text-align: center;
+text-shadow: 0 1px 1px #fff; }
+</style>
+
+<% provide(:title, "Thanks") %>
+<%current_uri = request.env['PATH_INFO']%>
+
+  <h1><% n = @customer.name %></h1>
+  <% n[0] = n[0].capitalize %>
+
+<br/>
+<h1>Welcome <%=n %> </h1>
+<h2>Please take a seat, we will be with you shortly</h2>
+
+
+
+
+
+<meta HTTP-EQUIV="REFRESH" content="5; <%=root_path%>">

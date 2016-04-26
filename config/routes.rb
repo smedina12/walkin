@@ -1,7 +1,22 @@
 Rails.application.routes.draw do
+
+  resources :customers
+  root              'signin_pages#home'
+  get 'choose'  =>  'signin_pages#choose'
+  get 'signup'  =>  'users#new'
+get 'signincustomer' => 'customers#new'
+
+  get 'signin' => 'signin_pages#returning'
+  get 'newcust'=>'customers#new'
+  get 'newcust2'=>'customers#new'
+  get 'allsigned' => 'customers#index'
+
+  get 'new' =>'signin_pages#new'
+
+
   get 'sessions/new'
-root  'users#index'
-  get 'signup'  => 'users#new'
+get 'all' => 'users#index'
+  
   
    get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

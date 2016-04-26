@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+
+
   # GET /users
   # GET /users.json
   def index
@@ -31,7 +33,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         log_in @user
-        format.html { redirect_to @user, notice: 'Thanks for signing up' }
+        format.html { redirect_to :new_customer, notice: 'Thanks for signing up' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -72,6 +74,20 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :lastName, :phone, :email)
+      params.require(:user).permit(:name, :lastName, :phone)
     end
+    
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+    # Confirms the correct user.
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
+    end
+    
+   
 end

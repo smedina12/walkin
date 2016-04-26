@@ -1,0 +1,69 @@
+<style>
+.actions
+{
+ color:green; 
+ 
+}
+</style>
+
+
+  <%current_uri = request.env['PATH_INFO']%>
+  <%= form_for(@customer) do |f| %>
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+      <% @customer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<%if current_uri == signincustomer_path || current_uri == :new_customer %>
+<div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field(:name, :value => current_user.name, :class => "textareastyle", class: 'form-control') %>
+  </div>
+  <div class="field">
+    <%= f.label 'Last Name' %><br>
+    <%= f.text_field(:lastname, :value => current_user.lastName, :class => "textareastyle", class: 'form-control') %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field(:phone, :value => current_user.phone, :class => "textareastyle", class: 'form-control') %>
+  </div>
+  <div class="field">
+    <%= f.label 'time in' %><br>
+    <%= f.text_field(:timein, :value => DateTime.now.utc.in_time_zone('Eastern Time (US & Canada)').strftime("%I:%M%p"), :class => "textareastyle", :readonly => true, class: 'form-control') %>
+ 
+  </div>
+  <div class="actions">
+    <%= f.submit "Put me on the waiting list", class: "btn btn-primary"%>
+  </div>
+  
+
+  <%else%>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field:name, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label 'Last name' %><br>
+    <%= f.text_field :lastname, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field:phone, class: 'form-control' %>
+  </div>
+  <div class="field">
+    <%= f.label 'time in' %><br>
+    <%= f.text_field(:timein, :value => DateTime.now.utc.in_time_zone('Eastern Time (US & Canada)').strftime("%I:%M%p"), :class => "textareastyle", :readonly => true, class: 'form-control') %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Sign In", class: "btn btn-primary" %>
+  </div>
+  
+  <%end%>
+<% end %>

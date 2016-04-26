@@ -1,8 +1,23 @@
-<p id="notice"><%= notice %></p>
 
+<h3>Please sign in to the waiting list</h3> 
+
+
+<h1>What service are you here for?</h1>
+<%text_field(:post, :service, size: 20)%> <input type="text" id="post_title" name="post[title]" size="20" />
+<br/>
+<br/>
+<br/>
+
+<%= link_to "Signin", signincustomer_path, class: "btn btn-lg btn-primary button" %>
+    
+   
+
+
+
+
+<!-- 
 <p>
   <strong>Name:</strong>
-  <%= @user.name %>
 </p>
 
 <p>
@@ -19,6 +34,9 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+<meta HTTP-EQUIV="REFRESH" content="5; <%=root_path%>">
+-->
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+
+

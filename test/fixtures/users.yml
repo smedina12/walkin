@@ -1,1 +1,8 @@
-# empty
+michael:
+  name: Sam Example
+  phone: michael@example.com
+
+
+archer:
+  name: Sterling Archer
+  phone: duchess@example.gov

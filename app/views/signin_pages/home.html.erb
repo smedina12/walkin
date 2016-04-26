@@ -1,0 +1,133 @@
+<% provide(:title, "Home") %>
+<!-- animsition.css -->
+<link rel="stylesheet" href="animation/dist/css/animsition.min.css">
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<!-- animsition.js -->
+<script src="animation/dist/js/animsition.min.js"></script>
+<script>
+$(function(){
+
+	$('#slide-submenu').on('click',function() {			        
+        $(this).closest('.list-group').fadeOut('slide',function(){
+        	$('.mini-submenu').fadeIn();	
+        });
+        
+      });
+
+	$('.mini-submenu').on('click',function(){		
+        $(this).next('.list-group').toggle('slide');
+        $('.mini-submenu').hide();
+	})
+})
+</script>
+
+
+<script>
+$(document).ready(function(){
+$("#flip").click(function(){
+$("#panel").slideToggle();
+})
+})
+</script>
+
+
+<script>
+$(document).ready(function() {
+  $(".animsition").animsition({
+    inClass: 'fade-in',
+    outClass: 'fade-out',
+    inDuration: 1500,
+    outDuration: 800,
+    linkElement: '.animsition-link',
+    // e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
+    loading: true,
+    loadingParentElement: 'body', //animsition wrapper element
+    loadingClass: 'animsition-loading',
+    loadingInner: '', // e.g '<img src="loading.svg" />'
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: [ 'animation-duration', '-webkit-animation-duration'],
+    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    overlay : false,
+    overlayClass : 'animsition-overlay-slide',
+    overlayParentElement : 'body',
+    transition: function(url){ window.location.href = url; }
+  });
+});
+</script>
+
+
+
+
+
+
+<br/>
+<br/><br/><br/><br/>
+
+
+
+  
+
+
+
+
+
+<div class=" animated fadeInUp">
+
+
+<div class="center jumbotron">
+  
+  
+  <h3>Welcome!</h3>
+  <h4>Dominican Technique Hair Salon</h4>
+
+  <h2>
+    Please sign in below 
+  </h2>
+  
+  <div class="animated flip">
+    <%= link_to(image_tag(image_path('Sign.png'), 
+  class: 'image-responsive1'), choose_path,  :method => :get) %>
+  </div>
+	
+
+
+  
+  
+  
+<br/>
+
+<div id="panel">
+  <div> <h1>Customer's list</h1>
+<%= link_to(image_tag(image_path('line-button.png'), 
+class: 'image-responsive'), customers_path,  :method => :get) %>
+</div>
+
+<div> <h1>All Customers</h1>
+<%= link_to(image_tag(image_path('home-button.png'), 
+class: 'image-responsive'), all_path,  :method => :get) %>
+</div>
+
+</div>
+
+  
+
+
+
+
+
+
+   
+
+          
+
+
+	</div>
+	
+
+</div>
+
+

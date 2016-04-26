@@ -1,13 +1,18 @@
 module SessionsHelper
 
+  
   # Logs in the given user.
   def log_in(user)
     if(user==nil)
       return "You do not have an account please sign up"
-    elsif 
+    else
     session[:user_id] = user.id
+
+    
+    
     end
   end
+  
 
   # Returns the current logged-in user (if any).
   def current_user
@@ -18,10 +23,17 @@ module SessionsHelper
   def logged_in?
     !current_user.nil?
   end
+    
+
   
   # Logs out the current user.
   def log_out
     session.delete(:user_id)
     @current_user = nil
+  end
+  
+  # Returns true if the given user is the current user.
+  def current_user?(user)
+    user == current_user
   end
 end

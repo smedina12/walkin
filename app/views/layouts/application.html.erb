@@ -1,31 +1,140 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+      <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=9" />
     <%= stylesheet_link_tag 'application', media: 'all',
                                            'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
       </script>
     <![endif]-->
+    
+       <title><%= yield(:title) %> | Welcome</title>
   </head>
+  
+            <%current_uri = request.env['PATH_INFO']%>
   <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-      <div class="container">
-        <%= link_to "sample app", '#', id: "logo" %>
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to "Home",   '#' %></li>
-            <li><%= link_to "Help",   '#' %></li>
-            <li><%= link_to "Log in", '#' %></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
     <div class="container">
+                
+
+        <!-- <%=  debug(params) if Rails.env.development? %>-->
+       
+        
+
+    </div>
+            <style>
+            .navbar
+            {
+             background-color:#66FFFF; 
+
+            }
+            .image-responsive
+            {
+             height:100px;
+             width:100px;
+            }
+            .alert
+            {
+                margin-top:100px;
+            }
+            .open
+            {
+             margin-left:-100px; 
+             padding:30px;
+            }
+            .hair
+            {
+               color: orange; font-family: "Great Vibes", 
+cursive; font-size: 20px;  font-weight: normal;
+ text-align: center;
+text-shadow: 0 1px 1px #fff;
+margin-right:20px;
+            }
+            .logo
+            {
+             margin-left:10px;   
+             margin-right:200px;
+            }
+            </style>
+            <header class="navbar navbar-fixed-top navbar-inverse animated fadeInDown" >
+                    <%if current_uri  == root_path%>
+            <ul class="nav navbar-nav navbar-right animated bounceInUp">
+                <div class="open"> 
+                    <button id="flip" type="button" class="btn btn-default btn-lg">
+                        <span class="glyphicon glyphicon-nav" aria-hidden="true"></span>
+                             </button>
+                             </div>
+                             </li>
+                             </ul>
+                             
+   <div class="animated bounceInUp"> <ul class="nav navbar-nav navbar-middle  ">
+              <div class="yo" >       <li> <%= link_to(image_tag(image_path('home2.png'), 
+                         class: 'image-responsive'), root_path,  :method => :get) %>
+                         </li></div>
+              </ul></div>
+                <ul class="nav navbar-nav navbar-left animated bounceInUp">
+                                <li><div class="logo"> <%= image_tag('new.png', :size => "75x75")%></div>
+                                <span class="hair">Dominican technique hair salon</span></li>
+                         </ul>
+                        <%else%>
+               <ul class="nav navbar-nav navbar-right animated fadeInLeftBig">
+                                <li><div class="logo"> <%= image_tag('new.png', :size => "75x75")%></div>
+                                <span class="hair">Dominican technique hair salon</span></li>
+                         </ul>
+                         
+                         <div class="animated bounceInUp"> <ul class="nav navbar-nav navbar-middle  ">
+              <div class="yo" >       <li><%= link_to(image_tag(image_path('home2.png'), 
+                         class: 'image-responsive'), root_path,  :method => :get) %></li></div>
+              </ul></div>
+                         
+        
+
+              
+                        <ul class="nav navbar-nav navbar-left animated bounceInUp">
+                      
+                                <li> <%= link_to(image_tag(image_path('back-button.png'), 
+                         class: 'image-responsive'), choose_path,  :method => :get) %>
+                         </li>
+                                     
+                        </ul>
+                        
+                        
+                        
+                       
+        
+                         
+               <%end%>
+
+        </header>
+        
+        
+        
+        
+      
+    <div class="container">
+
+        <% flash.each do |message_type, message| %>
+        <div class="animated shake"> 
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+        </div>
+        <% end %>
+<div class="cb-slideshow">
+    <li>
+		<span><div></div></span>
+	</li>
+	<li><span><div></div></span></li>
+		<li><span><div></div></span></li>
+			<li><span><div></div></span></li>
+				<li><span><div></div></span></li>
+					<li><span><div></div></span></li>
+	</div>
       <%= yield %>
+   
     </div>
   </body>
 </html>
+
+
