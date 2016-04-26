@@ -20,8 +20,8 @@
       </ul>
     </div>
   <% end %>
-<%if current_uri == signincustomer_path || current_uri == :new_customer %>
-<div class="field">
+<%if current_uri == signincustomer_path || current_uri == newcust_path %>
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field(:name, :value => current_user.name, :class => "textareastyle", class: 'form-control') %>
   </div>
@@ -65,5 +65,14 @@
     <%= f.submit "Sign In", class: "btn btn-primary" %>
   </div>
   
+
+  
+  
+  
+  
+  
+  
+ 
+ 
   <%end%>
 <% end %>

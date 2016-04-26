@@ -1,6 +1,6 @@
 
 <style>
-   h1 { color: #d54d7b; font-family: "Great Vibes", 
+   h3 { color: #d54d7b; font-family: "Great Vibes", 
 cursive; font-size: 150px; line-height: 160px; font-weight: normal;
 margin-bottom: 0px; margin-top: 40px; text-align: center;
 text-shadow: 0 1px 1px #fff; }
@@ -10,7 +10,7 @@ cursive; font-size: 50px; line-height: 160px; font-weight: normal;
 margin-bottom: 0px; margin-top: 20px; text-align: center;
 text-shadow: 0 1px 1px #fff; }
 </style>
-
+<div class="center jumbotron">
 <% provide(:title, "Thanks") %>
 <%current_uri = request.env['PATH_INFO']%>
 
@@ -18,11 +18,11 @@ text-shadow: 0 1px 1px #fff; }
   <% n[0] = n[0].capitalize %>
 
 <br/>
-<h1>Welcome <%=n %> </h1>
+<h3>Welcome <%=n %> </h3>
 <h2>Please take a seat, we will be with you shortly</h2>
 
 
-
+</div>
 
 
 <meta HTTP-EQUIV="REFRESH" content="5; <%=root_path%>">
