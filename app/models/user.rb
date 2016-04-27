@@ -1,15 +1,12 @@
 class User < ActiveRecord::Base
     validates :phone, uniqueness: { message: "Already Exist" }
- before_save :timestamp
     attr_accessor :remember_token
     validates :name,  presence: true, length: { maximum: 25 }
     validates :lastName, presence: true, length: { maximum: 25 }
     validates :phone, presence: true, length: { maximum: 10, minimum: 10 }
 
 
-  def timestamp
-   self.lastLogin = DateTime.now 
-  end
+
 
 
     
