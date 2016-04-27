@@ -12,15 +12,15 @@ cursive; font-size: 50px; font-weight: normal;
 text-shadow: 0 1px 1px #fff; }
 .normal
 {
- margin-right:200px;
+ margin-right:20%;
 }
 .normal1
 {
- margin-left:100px;
+ margin-left:70%;
 }
 .normal2
 {
- margin-right:200px;
+ margin-right:20%;
 }
  
  </style>
@@ -29,13 +29,16 @@ text-shadow: 0 1px 1px #fff; }
 <br/><br/><br/><br/>
 
 <div class="center jumbotron2"><div class="normal animated fadeInLeft">
- <%= link_to(image_tag(image_path('https://cloud.githubusercontent.com/assets/15232817/14834682/c3957646-0bd3-11e6-8f94-f7d92b8e6d53.png'), 
-                         class: 'image-responsive'), :new_customer,  :method => :get) %><h1>Sign in as Guest</h1></div>
+  <div class="normal2 animated fadeInLeft">
+ <%= link_to(image_tag(image_path('https://cloud.githubusercontent.com/assets/15232817/14834720/0861f06a-0bd4-11e6-91c2-de9e95928664.png'), 
+                         class: 'image-responsive'), signin_path,  :method => :get) %> <h1>Sign In</h1></div>
                          
                          <div class="normal1 animated fadeInRight">
  <%= link_to(image_tag(image_path('https://cloud.githubusercontent.com/assets/15232817/14834698/dd9562e0-0bd3-11e6-9fc7-27b8e75c512c.png'), 
                          class: 'image-responsive'), signup_path,  :method => :get) %><h1>Sign Up</h1></div>
                          
-                         <div class="normal2 animated fadeInLeft">
- <%= link_to(image_tag(image_path('https://cloud.githubusercontent.com/assets/15232817/14834720/0861f06a-0bd4-11e6-91c2-de9e95928664.png'), 
-                         class: 'image-responsive'), signin_path,  :method => :get) %> <h1>Sign In</h1></div></div>
+ <%= link_to(image_tag(image_path('https://cloud.githubusercontent.com/assets/15232817/14834682/c3957646-0bd3-11e6-8f94-f7d92b8e6d53.png'), 
+                         class: 'image-responsive'), :new_customer,  :method => :get) %><h1>Sign in as Guest</h1></div>
+                         
+                         
+                        </div>
