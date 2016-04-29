@@ -3714,7 +3714,7 @@ text-align: center;
 text-shadow: 0 1px 1px #fff; color:#0000FF;}
 
 h2 { color: #CC0033; font-family: "Great Vibes", 
-cursive; font-size: 50px;  font-weight: normal;
+cursive; font-size: 60px;  font-weight: normal;
  text-align: center;
 text-shadow: 0 1px 1px #fff; 
 
@@ -3764,3 +3764,22 @@ margin-right:20px;
              margin-left:10px;   
              margin-right:200px;
             }
+            
+            table{
+              text-align:left;
+
+    table-layout: fixed;
+    width: 250px;
+             
+
+}
+
+th, td {
+
+
+    width: 250px;
+}
+th
+{
+
+}
