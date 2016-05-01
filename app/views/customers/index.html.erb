@@ -31,12 +31,21 @@ text-shadow: 0 1px 1px red;
       <th class="names">Time in</th>
     </tr>
     
+    
     <% @customers.each do |customer| %>
-
+    <%if customer.lastname.blank?%>
+    <%b = "no last name"%>
+    <%else%>
+    <% b = customer.lastname %>
+    <%end%>
+    <% b[0] = b[0].capitalize %>
+    
+    <% n = customer.name %>
+    <% n[0] = n[0].capitalize %>
       <tr>
-        <td width="5%" class="names"><%=customer.name%></td>
+        <td width="5%" class="names"> <%=n%></td>
         
-        <td class="names"><%=customer.lastname%></td>
+        <td class="names"><%=b%></td>
         <td class="names"><%= customer.phone %></td>
         <td class="names"><%= customer.timein %></td>
         <td class="names"><%= link_to 'sign out', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
