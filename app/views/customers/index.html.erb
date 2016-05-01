@@ -32,18 +32,11 @@ text-shadow: 0 1px 1px red;
     </tr>
     
     <% @customers.each do |customer| %>
-    <%if customer.name == nil || customer.lastname ==nil%>
-    <h3>no customers<h3>
-    <%else%>
-    <% n = customer.name %>
-    <% b = customer.lastname %>
-    <% n[0] = n[0].capitalize %>
-    <% b[0] = b[0].capitalize %>
-    <%end%>
+
       <tr>
-        <td width="5%" class="names"><%=n%></td>
+        <td width="5%" class="names">customer.name</td>
         
-        <td class="names"><%= b %></td>
+        <td class="names">customer.lastname</td>
         <td class="names"><%= customer.phone %></td>
         <td class="names"><%= customer.timein %></td>
         <td class="names"><%= link_to 'sign out', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
