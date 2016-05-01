@@ -35,14 +35,26 @@ text-shadow: 0 1px 1px red;
     
     
     <% @customers.each do |customer| %>
+    
     <%if customer.lastname.blank?%>
-    <%=""%>
+    
+    <%b="empty"%>
+    
+    
     <%else%>
+    
+    
+    
     <% b = customer.lastname %>
+    
+    
     <%end%>
+    
     <% b[0] = b[0].capitalize %>
     <% n = customer.name %>
     <% n[0] = n[0].capitalize %>
+    
+    
     
   
       <tr>
