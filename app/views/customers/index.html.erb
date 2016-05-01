@@ -23,7 +23,9 @@ text-shadow: 0 1px 1px red;
 <div class="col-xs-6">
     
     <table style="width:100%">
-
+<%if Customer.exists? == false%>
+    <h1 class="names"><%="No customers signed in"%></h1>
+    <%else%>
     <tr>
       <th class="names">Name</th>
       <th class="names">Last Name</th>
@@ -34,7 +36,7 @@ text-shadow: 0 1px 1px red;
     
     <% @customers.each do |customer| %>
     <%if customer.lastname.blank?%>
-    <%b = "no last name"%>
+
     <%else%>
     <% b = customer.lastname %>
     <%end%>
@@ -42,14 +44,17 @@ text-shadow: 0 1px 1px red;
     
     <% n = customer.name %>
     <% n[0] = n[0].capitalize %>
+    
+  
       <tr>
-        <td width="5%" class="names"> <%=n%></td>
+        <td class="names"> <%=n%></td>
         
         <td class="names"><%=b%></td>
         <td class="names"><%= customer.phone %></td>
         <td class="names"><%= customer.timein %></td>
         <td class="names"><%= link_to 'sign out', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+       <% end %>
     <% end %>
 
     </table>
