@@ -9,5 +9,4 @@ This is the link for the WebApp
 
 This is just a demostration of the app. 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
