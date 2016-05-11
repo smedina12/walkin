@@ -1,28 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an application used to let customers sign in for a hair salon business. 
 
-Things you may want to cover:
 
-* Ruby version
+* You can see this application running on heroku 
+This is the link for the WebApp
+"https://morning-earth-97353.herokuapp.com"
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+This is just a demostration of the app. 
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
